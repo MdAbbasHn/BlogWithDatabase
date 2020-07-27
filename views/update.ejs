@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+
+  <h1 class="titlefont"><%=title%></h1>
+  <div style="overflow-wrap: break-word;">
+    <p class="updatecontentfont"><%=content%></p>
+  </div>
+  <em style="color:blue">Below is the space to update your post :</em>
+  <form class="/" action="/save" method="post">
+    <textarea name="updatedContent" rows="8" cols="80"><%=content%></textarea>
+    <input type="hidden" name="postId" value="<%= _id %>">
+    <button class="btn btn-warning" style="margin-bottom:50px" type="submit" name="origContent" value="<%=content%>">Save</button>
+  </form>
+
+<%- include("partials/footer"); -%>

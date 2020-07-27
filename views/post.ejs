@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+
+  <h1 class="titlefont"><%=title%></h1>
+  <div style="overflow-wrap: break-word;">
+    <p class="contentfont"><%=content%></p>
+  </div>
+
+  <div>
+    <form class="/" action="/update" method="post">
+      <button class="btn btn-warning"type="submit" name="updateTitle" value="<%= title %>">Update</button>
+      <input type="hidden" name="updateContent" value="<%=content%>">
+      <input type="hidden" name="updateId" value="<%= _id %>">
+    </form>
+  </div>
+  <br>
+  <form class="deletebtn" action="/delete" method="post">
+    <button class="btn btn-danger" type="submit" name="deletedItem" value="<%= _id %>">Delete</button>
+  </form>
+<%- include("partials/footer"); -%>
