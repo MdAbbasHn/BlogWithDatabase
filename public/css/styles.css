@@ -6,6 +6,20 @@ body{
   min-height:100%;
   margin:0;
   position: relative;
+  background-color: #FFC300 ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.nav-item{
+    color:#1abc9c;
+    margin: 0 10px;
+    transition: 0.4s ease;
+}
+.nav-item:hover{
+  background-color: #1abc9c;
+  border-radius: 20px;
 }
 .mainheading{
   text-align: center;
@@ -14,6 +28,9 @@ body{
 .buttonsgrp{
   text-align: center;
   margin-top: 50px;
+}
+.navbar-brand{
+  margin:0;
 }
 .form-group p{
   margin: 20px auto 0 auto;
@@ -30,11 +47,9 @@ body{
 #message {
   display:none;
   background: #f1f1f1;
-  position: relative;
-  left:510px;
   color: #000;
   padding: 5px;
-  margin: 10px;
+  margin: 10px auto;
   border-radius: 10px;
 }
 
@@ -43,15 +58,14 @@ body{
   font-size: 10px;
 }
 .befregsub{
-  position:relative;
-  left:34.45%;
-  margin-top:10px;
+  display: block;
+  margin:20px auto;
+  /* left:34.45%;
+  margin-top:10px; */
 }
 .aftregsub{
-  position:relative;
-  left:4.5%;
-  top:40px;
-  margin-top:10px;
+  display: block;
+  margin:10px auto 20px auto;
 }
 
 /* Add a green text color and a checkmark when the requirements are right */
@@ -80,11 +94,11 @@ body{
 }
 
 #mainbody{
-  padding: 0 10%;
+  padding: 0 6%;
 }
-.container{
+/* .container{
   position: relative;
-}
+} */
 nav{
   min-width:100%;
 }
@@ -96,40 +110,66 @@ ul{
     padding-bottom: 70px;
 }
 .navbar {
+    background-color: #EEEDEA;
     padding-top: 15px;
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin: 0 auto 70px auto;
 }
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: black !important;
+}
+.blogbox{
+  margin-bottom: 40px;
+  box-shadow: 10px -10px 20px #F09213;
+  border-radius: 10px
+
 }
 .titlefont{
-  font-family: 'Bungee', cursive;
-  font-size: 4rem;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 3rem;
   color:#07074E;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .contentfont{
+  text-align: center;
   line-height: 30px;
-  font-family: 'Inconsolata', monospace;
-  font-size: 2.2rem;
-  color:#D7AC0E;
+  font-family: 'Sniglet', cursive;
+  text-align: center;
+  font-size: 1.6rem;
+  color:#E70000 ;
+  margin-bottom: 70px;
+}
+.readmorefont{
+  font-style: italic;
+  text-decoration: underline;
+  line-height: 30px;
+  font-family: monospace;
+  font-size: 1.4rem;
+  color:black;
   margin-bottom: 70px;
 }
 .updatecontentfont{
+  text-align: center;
   line-height: 30px;
-  font-family: 'Inconsolata', monospace;
-  font-size: 1.7rem;
-  color:#D7AC0E;
+  font-family: 'Sniglet', cursive;
+  font-size: 2rem;
+  color:#A10303;
   margin-bottom: 70px;
 }
 .footer-padding {
 	padding-bottom: 60px;
+  margin-top: 70px;
 }
-
+.jumbotron{
+  box-shadow: 5px 5px 6px red;
+}
 .footer {
 	position: absolute;
 	text-align: center;
@@ -147,21 +187,18 @@ ul{
 }
 .deletebtn{
   position:relative;
+  display: inline-block;
   left: 100px;
-  bottom: 53px;
-}
-@media only screen and (max-height: 914px) and (max-width: 412px){
-  #mainbody{
-    padding:0 6%;
-  }
-  .footer{
-    padding-right: 0;
-  }
-
+  bottom: 62px;
 }
 @media only screen and (max-width: 700px){
   textarea {
     height: 15em;
     width: 20em;
 }
+}
+@media only screen and (max-width: 768px){
+  .nav-link{
+    margin-left:20px;
+  }
 }

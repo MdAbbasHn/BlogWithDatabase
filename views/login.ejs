@@ -1,0 +1,34 @@
+<%- include("partials/header"); -%>
+<li class="nav-item navbag" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/signup">SIGNUP</a></li>
+<li class="nav-item navbag active" id="contact"><a class="nav-link" href="/login">LOGIN</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<body>
+  <div class="container" id="mainbody">
+
+    <h1 class="mainheading">Login</h1><br>
+    <div class="container">
+      <form class="coolform" action="/login" method="post">
+        <div class="form-group col-lg-6 col-md-8 col-sm-12" id="userNameInput" style="margin:auto">
+          <p>Username<span class="ast">*</span></p>
+          <input type="text" class="form-control" name="username" autofocus required autocomplete="off">
+          <small id="smalluser" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group col-lg-6 col-md-8 col-sm-12" style="margin:auto">
+          <p>Password<span class="ast">*</span></p>
+          <input type="password" class="form-control" id="psw" name="password" required autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+          <small style="font-weight:bold;color:red"><%=invalidpass%></small>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary befregsub form-group col-lg-6 col-md-8 col-sm-12" id="regsubmit">Login</button>
+      </form>
+      <hr>
+      <p style="text-align:center">Don't have an account? <a href="/signup">Sign Up here</a></p>
+
+      <%- include("partials/footer"); -%>

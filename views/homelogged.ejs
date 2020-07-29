@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+<li class="nav-item navbag active" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/compose">COMPOSE</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/logout">LOGOUT</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<body>
+ <div class="container" id="mainbody">
+   <div class="">
+     <h1 style="margin-bottom:50px;text-align:center">Welcome to Your Dashboard</h1>
+     <p style="font-family: 'Righteous', cursive;font-size:1.4rem;color:purple;margin-bottom:70px;text-align:center"> <%= startingContent %> </p>
+   </div>
+
+
+<%- include("partials/footer"); -%>

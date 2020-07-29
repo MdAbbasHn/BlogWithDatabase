@@ -1,19 +1,33 @@
 <%- include("partials/header"); -%>
 
+<li class="nav-item navbag" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/compose">COMPOSE</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/logout">LOGOUT</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<body>
+<div class="container" id="mainbody">
   <h1 class="titlefont"><%=title%></h1>
   <div style="overflow-wrap: break-word;">
     <p class="contentfont"><%=content%></p>
   </div>
-
-  <div>
-    <form class="/" action="/update" method="post">
-      <button class="btn btn-warning"type="submit" name="updateTitle" value="<%= title %>">Update</button>
-      <input type="hidden" name="updateContent" value="<%=content%>">
-      <input type="hidden" name="updateId" value="<%= _id %>">
+  <div style="margin:10px auto 10px auto;width:180px;height:100px">
+    <div>
+      <form class="/" style="display:inline-block;" action="/update" method="post">
+        <button class="btn btn-info" style="postion:relative;" type="submit" name="updateTitle" value="<%= title %>">Update</button>
+        <input type="hidden" name="updateContent" value="<%=content%>">
+        <input type="hidden" name="updateId" value="<%= _id %>">
+      </form>
+    </div>
+    <br>
+    <form class="deletebtn" style="postion:relative;left:100px" action="/delete" method="post">
+      <button class="btn btn-danger" style="postion:relative;" type="submit" name="deletedItem" value="<%= _id %>">Delete</button>
     </form>
   </div>
-  <br>
-  <form class="deletebtn" action="/delete" method="post">
-    <button class="btn btn-danger" type="submit" name="deletedItem" value="<%= _id %>">Delete</button>
-  </form>
+
 <%- include("partials/footer"); -%>

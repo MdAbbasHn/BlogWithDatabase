@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+<li class="nav-item navbag" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/compose">COMPOSE</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/logout">LOGOUT</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<body>
+<div class="container" id="mainbody">
+
+<div class="jumbotron" style="text-align:center;margin:10%;">
+  <h1 style="font-size:2rem;">Fill up a security question to encounter any future sign in issues</h1>
+  <form class="" style="position:relative;" action="/securityq" method="post">
+    <select class="" name="" style="margin:20px auto;height:45px;width:85%;position:relative;">
+      <option name="animal">What is your favourite animal?</option>
+      <option name="live">What was your childhood nickname?</option>
+      <input type="hidden" name="fName" value="<%= fName %>">
+      <input type="hidden" name="lName" value="<%= lName %>">
+      <input type="hidden" name="username" value="<%= username %>">
+      <input type="hidden" name="password" value="<%= password %>">
+    </select>
+    <input type="text" name="answer" placeholder="Your Answer" style="margin:20px auto;height:45px;width:85%;position:relative;" autocomplete="off">
+    <button type="submit" class="btn btn-lg btn-danger" name="button">Submit</button>
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>

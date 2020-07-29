@@ -1,17 +1,17 @@
 <%- include("partials/header"); -%>
+<li class="nav-item navbag active" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/signup">SIGNUP</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/login">LOGIN</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<body>
+ <div class="container" id="mainbody">
     <h1>Home</h1>
-    <p style="font-family: 'Righteous', cursive;font-size:2rem;color:purple;margin-bottom:70px"> <%= startingContent %> </p>
-
-
-  <%  posts.forEach(function(post){ %>
-    <h1 class="titlefont"><%=post.title%></h1>
-    <div style="overflow-wrap: break-word;">
-      <p class="contentfont">
-      <%=post.content.substring(0,60) + " ..."%>
-      <a href="/posts/<%=post._id%>">Read More</a>
-      </p>
-    </div>
-    <% }) %>
-
+    <p style="font-family: 'Righteous', cursive;font-size:1.4rem;color:purple;margin-bottom:70px"> <%= startingContent %> </p>
 
 <%- include("partials/footer"); -%>

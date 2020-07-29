@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+
+<li class="nav-item navbag" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navba active" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/compose">COMPOSE</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/logout">LOGOUT</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<body>
+  <h1 class="mainheading" style="text-align:center;margin-top:-30px;margin-bottom:50px">My Blogs</h1>
+<div class="container" id="mainbody">
+
+  <% if(posts != []){ %>
+    <%  posts.forEach(function(post){ %>
+      <div class="blogbox">
+        <h1 class="titlefont"><%=post.title%></h1>
+        <div style="overflow-wrap: break-word;">
+          <p class="contentfont">
+            <% if(post.content.length>60) {%>
+          <%=post.content.substring(0,60) + " ..."%>
+          <a class="readmorefont" href="/posts/<%=post._id%>">Read More/Update/Delete</a>
+          <% } else { %>
+            <%=post.content + " ..."%>
+            <a class="readmorefont" href="/posts/<%=post._id%>">Update/Delete</a>
+            </p>
+        <%  } %>
+        </div>
+      </div>
+        <% }); %>
+  <% } else { %>
+    <h1>No Posts Yet</h1>
+    <p>Weirddddddddd</p>
+  <% } %>
+
+
+
+<%- include("partials/footer"); -%>

@@ -1,10 +1,23 @@
 <%- include("partials/header"); -%>
+<li class="nav-item navbag" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag active" id="contact"><a class="nav-link" href="/compose">COMPOSE</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/logout">LOGOUT</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<body>
+<div class="container" id="mainbody">
     <h1>Compose</h1>
     <form class="" action="/compose" method="post">
       <div class="form-group">
         <label>Title</label>
         <input class="form-control" type="text" name="postTitle">
         <label>Post</label>
+        <input type="hidden" name="userId" value="<%=userId%>">
         <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
       </div>
       <button class="btn btn-primary" type="submit" name="button">Publish</button>

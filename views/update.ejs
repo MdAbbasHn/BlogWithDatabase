@@ -1,14 +1,31 @@
 <%- include("partials/header"); -%>
 
-  <h1 class="titlefont"><%=title%></h1>
+<li class="nav-item navbag" id="home"><a class="nav-link" href="/">HOME</a></li>
+<li class="nav-item navbag" id="compose"><a class="nav-link" href="/blogposts">MY BLOGS</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/compose">COMPOSE</a></li>
+<li class="nav-item navbag" id="contact"><a class="nav-link" href="/logout">LOGOUT</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<body>
+<div class="container" id="mainbody">
   <div style="overflow-wrap: break-word;">
-    <p class="updatecontentfont"><%=content%></p>
+    <h1 class="titlefont"><%=title%></h1>
   </div>
-  <em style="color:blue">Below is the space to update your post :</em>
-  <form class="/" action="/save" method="post">
-    <textarea name="updatedContent" rows="8" cols="80"><%=content%></textarea>
+
+<div style="overflow-wrap: break-word;">
+  <p class="updatecontentfont"><%=content%></p>
+</div>
+<form class="/" action="/save" method="post">
+  <div style="margin:10px auto 10px auto;width:70%">
+    <em style="color:blue;text-align:center">Below is the space to update your post :</em>
+    <textarea name="updatedContent" rows="10" cols="60"><%=content%></textarea>
     <input type="hidden" name="postId" value="<%= _id %>">
-    <button class="btn btn-warning" style="margin-bottom:50px" type="submit" name="origContent" value="<%=content%>">Save</button>
-  </form>
+    <button class="btn btn-lg btn-success" style="margin-bottom:50px" type="submit" name="origContent" value="<%=content%>">Save</button>
+  </div>
+
+</form>
 
 <%- include("partials/footer"); -%>
