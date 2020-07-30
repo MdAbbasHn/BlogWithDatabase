@@ -131,12 +131,18 @@ app.post("/securityq",(req,res) => {
                fullName:req.body.fName + " " + req.body.lName,
                username:req.body.username,
                answer:req.body.answer},req.body.password,function(err,user){
-                 if(!err){
-                     res.render("login",{invalidpass:""});
+                 if(err){
+                     console.log(err);
+                     res.redirect("/signup");
                    }
                  else{
+                   if(user.username.length<4 && user.username.length>10){
+                     res.render("signup",{taken:"Username length needs to be between 4 and 10",suguser:"",fName:req.body.fName,lName:req.body.lName});
+                   }
+                   else{
+                     res.redirect("/login");
+                   }
 
-                   res.render("signup",{taken:"Username length needs to be between 4 and 10",suguser:"",fName:req.body.fName,lName:req.body.lName});
                     }
                });
 });
@@ -171,14 +177,15 @@ app.get("/faillogin",(req,res) =>{
             else{
               passport.authenticate("local",{failureRedirect: "/faillogin"})(req,res,function(){
                 BlogUser.findOne({username:req.body.username},(err,foundUser) =>{
+                  console.log(foundUser);
                   if(err){
                     console.log(err);
                     return res.render("login",{invalidpass:"Invalid Username / Password"});
                   }
                   else{
                     if(foundUser){
-                      mainUserId = foundUser._id;
-                      res.redirect("/blogposts");
+                        mainUserId = foundUser._id;
+                        res.redirect("/blogposts");
                     }
                     else{
                       return res.render("login",{invalidpass:"Invalid Username / Password"});
@@ -194,7 +201,9 @@ app.get("/blogposts",(req,res) =>{
   if(req.isAuthenticated()){
     BlogUser.findOne({_id:mainUserId},(err,user) => {
       if(err){
-        console.log(err);
+        mainUserId = "";
+        req.logout();
+        res.redirect("/faillogin");
       }
       else{
         if(user){
@@ -218,7 +227,7 @@ app.get("/blogposts",(req,res) =>{
 app.get("/logout",(req,res) => {
   mainUserId = "";
   req.logout();
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 app.get("/compose", function(req, res){
